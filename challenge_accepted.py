@@ -23,7 +23,7 @@ def string2int(sentence_input):
         for digit in digits:
             if alphabet in digit:
                 result = result + alphabet
-    return result
+    return int(result) 
 
 
 def recheck(sentence_input):
