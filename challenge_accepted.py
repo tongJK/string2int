@@ -49,6 +49,7 @@ if __name__ == '__main__':
     
     #
     # ---------- use this block for set keyboard's input ---------------------------------------------------------
+    
     while True:
         given_input = input('Enter your input: ')
         int_result = string2int(given_input)
