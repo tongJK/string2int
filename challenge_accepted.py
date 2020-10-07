@@ -24,7 +24,7 @@ def string2int(sentence_input):
             if alphabet in digit:
                 result = result + alphabet
 
-    return int(result) if result else None
+    return result
 
 
 def recheck(sentence_input):
@@ -53,7 +53,7 @@ if __name__ == '__main__':
     while True:
         given_input = input('Enter your input: ')
         int_result = string2int(given_input)
-        print('given input is "{}", result is {}, type of result is {}\n'.format(
-            given_input, int_result, type(int_result)))
+        print('given input is "{}", result is {}\n'.format(
+            given_input, int_result))
 
     # ------------------------------------------------------------------------------------------------------------
