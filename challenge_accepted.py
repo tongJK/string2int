@@ -1,5 +1,5 @@
 """
-Challenge Accepted
+Challenge Accepted.
 
 By : Jakgri Klabdi (https://github.com/tongJK)
 
@@ -8,52 +8,49 @@ UUsing : Python 3.6.6
 Started : 30/9/2020 20.50
 
 Finished : 30/9/2020 21.10
+
+Edited : 07/10/2020 19.25
 """
 
 
-digits = '0123456789'
+digits = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}
 
 
 def string2int(sentence_input):
     """
     This is my function to extract numerical from any input sentence
     """
-    result = ''
+    result = None
     for alphabet in sentence_input:
-        for digit in digits:
-            if alphabet in digit:
-                result = result + alphabet
+        if alphabet in digits:
+            if result:
+                result = (result*10) + digits[alphabet]
+            else:
+                result = digits[alphabet]
 
     return result
 
 
-def recheck(sentence_input):
-    """
-    This function to recheck that my function(string2int) work well
-    """
-
-    return ''.join(filter(lambda i: i.isdigit(), sentence_input)) 
-
-
 if __name__ == '__main__':
 
+    # #
+    # # ---------- use this block for set value's input ------------------------------------------------------------
     #
-    # ---------- use this block for set value's input ------------------------------------------------------------
-    
     # test_list = ['abc573', 'a5b7c3', 'fsipfjqw0-efjqw0-mpefmpหดาย-/ตคภ/ตค/--++ ', 'asdasd', '123456789']
-    # 
+    #
     # for i, test in enumerate(test_list):
-    #     print('test {} : input is "{}", my funtion\'s result is {} and recheck result is {}'
-    #           .format((i+1), test, string2int(test), recheck(test)))
-    # ------------------------------------------------------------------------------------------------------------
-    
+    #     int_result = string2int(test)
+    #     print('test {} : input is "{}", my funtion\'s result is "{}", type of result is {}'.format(
+    #         (i+1), test, int_result, type(int_result)))
+    # # ------------------------------------------------------------------------------------------------------------
+
     #
     # ---------- use this block for set keyboard's input ---------------------------------------------------------
-    
+
     while True:
         given_input = input('Enter your input: ')
         int_result = string2int(given_input)
-        print('given input is "{}", result is {}\n'.format(
-            given_input, int_result))
+        print('given input is "{}", result is {}, type of result is {}\n'.format(
+            given_input, int_result, type(int_result)))
 
     # ------------------------------------------------------------------------------------------------------------
